@@ -6,12 +6,15 @@ import { WidgetGeneric } from "@/components/widget-generic/indes";
 
 import { Carousel } from "@/components/carousel";
 import { ArrowLeftOutlined, ArrowRightOutlined } from "@ant-design/icons";
-import { ChangeEvent, useCallback, useRef, useState } from "react";
+import { ChangeEvent, useCallback, useEffect, useRef, useState } from "react";
 import { SwiperContainer } from "swiper/element";
 import { getImagesFromLocal, setImageInLocal } from "@/utils/getImages";
 export default function Home() {
   const sliderRef = useRef<SwiperContainer>();
-  const [images, setImages] = useState(getImagesFromLocal());
+  const [images, setImages] = useState<string[]>([]);
+  useEffect(() => {
+    setImages(getImagesFromLocal());
+  }, []);
 
   const handlePrev = () => {
     if (!sliderRef.current) return;
