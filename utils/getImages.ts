@@ -1,3 +1,5 @@
+"use client";
+
 export const getImagesFromLocal = (): Array<string> => {
   return JSON.parse(localStorage.getItem("image") as string) || [];
 };
