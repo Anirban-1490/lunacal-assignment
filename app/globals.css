@@ -18,16 +18,19 @@
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  background: linear-gradient(to bottom,
+      #373E44,
+      #191B1F 50%)
 }
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
   }
+}
+
+.button-next,
+.button-prev {
+  box-shadow: -0.4rem -0.4rem 1rem #96bee762, 0.4rem 0.4rem 1rem #101213;
+  @apply !w-[3rem] !h-[3rem] rounded-full bg-gradient-to-r from-[#303439] to-[#161718]
 }
